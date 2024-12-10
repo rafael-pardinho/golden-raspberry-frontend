@@ -43,7 +43,7 @@ https://challenge.outsera.tech/api/movies
 
 ### **1. Clonar o Repositório**
 ```bash
-https://github.com/seu-usuario/seu-repositorio.git
+https://github.com/rafael-pardinho/golden-raspberry-frontend.git
 ```
 
 ### **2. Instalar Dependências**
