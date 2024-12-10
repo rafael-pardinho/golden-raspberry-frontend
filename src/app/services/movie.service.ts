@@ -30,4 +30,9 @@ export class MovieService {
     return this.http.get(`${this.baseUrl}?${queryString}`);
   }
 
+  // Obtém os vencedores de um ano específico
+  getWinnersByYear(year: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}?winner=true&year=${year}`);
+  }
+
 }
