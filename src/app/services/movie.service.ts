@@ -19,4 +19,9 @@ export class MovieService {
     return this.http.get(`${this.baseUrl}?projection=studios-with-win-count`);
   }
 
+  // Obtém os produtores com o maior e menor intervalo entre vitórias
+  getProducersIntervals(): Observable<any> {
+    return this.http.get(`${this.baseUrl}?projection=max-min-win-interval-for-producers`);
+  }
+
 }
