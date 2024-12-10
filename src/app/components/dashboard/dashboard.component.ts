@@ -44,4 +44,26 @@ export class DashboardComponent implements OnInit {
       this.minIntervals = data.min;
     });
   }
+
+  // usado para buscar vencedores de filmes em um ano específico e atualizar os dados exibidos no front-end
+  searchWinnersByYear() {
+    if (this.searchYear !== null) {
+      this.movieService.getWinnersByYear(this.searchYear).subscribe(
+        (data: any) => {
+          console.log('API Response:', data); // Log para depuração
+          if (Array.isArray(data)) {
+            this.winnersByYear = data; // Atribui diretamente o array retornado
+          } else {
+            this.winnersByYear = []; // Limpa a tabela se não for um array
+          }
+        },
+        (error) => {
+          console.error('API Error:', error); // Log de erro
+          this.winnersByYear = []; // Limpa a tabela em caso de erro
+        }
+      );
+    } else {
+      this.winnersByYear = []; // Limpa a tabela se o ano não for válido
+    }
+  }
 }
