@@ -48,4 +48,15 @@ export class MovieListComponent {
       this.totalElements = data.totalElements;
     });
   }
+
+  applyFilters() {
+    this.currentPage = 0;
+    this.fetchMovies();
+  }
+
+  onPageChange(event: any) {
+    this.currentPage = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.fetchMovies();
+  }
 }
