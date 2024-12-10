@@ -1,11 +1,21 @@
 .sidenav-container {
   height: 100vh;
+  display: flex;
 }
 
-.sidenav {
-  width: 250px;
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  z-index: 2;
+  position: sticky;
+  top: 0;
 }
 
 .content {
   padding: 16px;
+  margin-top: 64px;
+  overflow: auto;
 }
