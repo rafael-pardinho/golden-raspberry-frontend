@@ -18,4 +18,17 @@ export class DashboardComponent implements OnInit {
   minIntervals: any[] = [];
   winnersByYear: any[] = [];
   searchYear: number | null = null;
+
+  constructor(public movieService: MovieService) {}
+
+  ngOnInit() {
+    this.loadDashboardData();
+  }
+
+  loadDashboardData() {
+    // Carrega anos com múltiplos vencedores
+    this.movieService.getYearsWithMultipleWinners().subscribe((data) => {
+      this.yearsWithMultipleWinners = data.years;
+    });
+  }
 }
