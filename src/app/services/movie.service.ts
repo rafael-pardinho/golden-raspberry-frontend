@@ -14,4 +14,9 @@ export class MovieService {
     return this.http.get(`${this.baseUrl}?projection=years-with-multiple-winners`);
   }
 
+  // Obtém os três estúdios com mais vitórias
+  getTopStudios(): Observable<any> {
+    return this.http.get(`${this.baseUrl}?projection=studios-with-win-count`);
+  }
+
 }
