@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Para *ngFor
+import { FormsModule } from '@angular/forms'; // Para [(ngModel)]
+import { MatTableModule } from '@angular/material/table'; // Para tabelas Material
+import { MatPaginatorModule } from '@angular/material/paginator'; // Para mat-paginator
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-list',
-  imports: [],
+  standalone: true,
   templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.scss'
+  styleUrls: ['./movie-list.component.scss'],
+  providers: [MovieService],
+  imports: [CommonModule, FormsModule, MatTableModule, MatPaginatorModule], // Adicionados os módulos necessários
 })
+
 export class MovieListComponent {
 
 }

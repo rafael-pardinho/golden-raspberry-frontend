@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; // Importando CommonModule
 import { FormsModule } from '@angular/forms';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  standalone: true,
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+  styleUrls: ['./dashboard.component.scss'],
   providers: [MovieService],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule], // Adicionando CommonModule para habilitar *ngFor e *ngIf
 })
+
 export class DashboardComponent implements OnInit {
   yearsWithMultipleWinners: any[] = [];
   topStudios: any[] = [];
