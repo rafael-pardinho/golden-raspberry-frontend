@@ -11,6 +11,11 @@ import { MovieService } from '../../services/movie.service';
   providers: [MovieService],
   imports: [CommonModule, FormsModule],
 })
-export class DashboardComponent {
-
+export class DashboardComponent implements OnInit {
+  yearsWithMultipleWinners: any[] = [];
+  topStudios: any[] = [];
+  maxIntervals: any[] = [];
+  minIntervals: any[] = [];
+  winnersByYear: any[] = [];
+  searchYear: number | null = null;
 }
