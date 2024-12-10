@@ -15,5 +15,11 @@ import { MovieService } from '../../services/movie.service';
 })
 
 export class MovieListComponent {
+  movies: any[] = [];
+  filterYear: string = '';
+  filterWinner: string = '';
+  totalElements: number = 0;
+  pageSize: number = 10;
+  currentPage: number = 0;
 
 }
