@@ -30,5 +30,18 @@ export class DashboardComponent implements OnInit {
     this.movieService.getYearsWithMultipleWinners().subscribe((data) => {
       this.yearsWithMultipleWinners = data.years;
     });
+
+    // Carrega os estúdios com mais vitórias e filtra os 3 maiores
+    this.movieService.getTopStudios().subscribe((data) => {
+      this.topStudios = data.studios
+        .sort((a: any, b: any) => b.winCount - a.winCount) // Ordena por winCount
+        .slice(0, 3); // Pega os 3 primeiros
+    });
+
+    // Carrega intervalos máximos e mínimos entre vitórias
+    this.movieService.getProducersIntervals().subscribe((data) => {
+      this.maxIntervals = data.max;
+      this.minIntervals = data.min;
+    });
   }
 }
