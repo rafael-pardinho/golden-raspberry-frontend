@@ -1,6 +1,6 @@
 # Golden Raspberry Awards Application
 
-Esta é uma aplicação Angular desenvolvida para exibir informações sobre os indicados e vencedores da categoria **Pior Filme** do Golden Raspberry Awards. A aplicação inclui um dashboard com estatísticas detalhadas e uma página de listagem completa de filmes.
+Esta é uma aplicação Angular 19 desenvolvida para exibir informações sobre os indicados e vencedores da categoria **Pior Filme** do Golden Raspberry Awards. A aplicação inclui um dashboard com estatísticas detalhadas e uma página de listagem completa de filmes.
 
 ## 📋 Funcionalidades
 
