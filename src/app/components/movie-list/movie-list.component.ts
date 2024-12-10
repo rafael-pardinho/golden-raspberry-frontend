@@ -22,4 +22,30 @@ export class MovieListComponent {
   pageSize: number = 10;
   currentPage: number = 0;
 
+  constructor(public movieService: MovieService) {}
+
+  ngOnInit() {
+    this.fetchMovies();
+  }
+
+  // Buscar filmes com base nos critérios de paginação e filtros aplicados (ano e status de vencedor)
+  fetchMovies() {
+    const params: any = {
+      page: this.currentPage,
+      size: this.pageSize,
+    };
+
+    if (this.filterYear) {
+      params.year = this.filterYear;
+    }
+
+    if (this.filterWinner) {
+      params.winner = this.filterWinner === 'Yes'; // Converte para booleano
+    }
+
+    this.movieService.getMovies(params).subscribe((data: any) => {
+      this.movies = data.content;
+      this.totalElements = data.totalElements;
+    });
+  }
 }
