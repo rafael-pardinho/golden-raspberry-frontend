@@ -95,15 +95,3 @@ ng test
 
 ## 📱 Responsividade
 A aplicação é responsiva e otimizada para telas com largura mínima de **768px**.
-
-## 🧩 Melhorias Futuras
-- Adicionar testes E2E
-- Melhorar mensagens de erro para falhas na API
-- Implementar cache para dados mais acessados
-
-## 📝 Licença
-Este projeto está sob a licença [MIT](LICENSE).
-
----
-
-Feito com ❤️ por [Seu Nome](https://github.com/seu-usuario).
