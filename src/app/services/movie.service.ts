@@ -24,4 +24,10 @@ export class MovieService {
     return this.http.get(`${this.baseUrl}?projection=max-min-win-interval-for-producers`);
   }
 
+  // Obtém uma lista de filmes, permitindo filtros como paginação e busca
+  getMovies(params: any): Observable<any> {
+    const queryString = new URLSearchParams(params).toString();
+    return this.http.get(`${this.baseUrl}?${queryString}`);
+  }
+
 }
