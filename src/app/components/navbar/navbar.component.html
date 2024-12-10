@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Menu lateral -->
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a mat-list-item routerLink="/list" routerLinkActive="active">List</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Conteúdo principal -->
+  <mat-sidenav-content class="sidenav-content">
+    <mat-toolbar color="primary">
+      <span>Golden Raspberry Awards</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
