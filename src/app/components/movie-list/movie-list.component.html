@@ -1,1 +1,47 @@
-<p>movie-list works!</p>
+<div class="container mt-4">
+  <h3>List movies</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>
+          Year
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Filter by year"
+            [(ngModel)]="filterYear"
+            (input)="applyFilters()"
+          />
+        </th>
+        <th>Title</th>
+        <th>
+          Winner?
+          <select
+            class="form-control"
+            [(ngModel)]="filterWinner"
+            (change)="applyFilters()"
+          >
+            <option value="">Yes/No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{ movie.id }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.winner ? 'Yes' : 'No' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <mat-paginator
+    [length]="totalElements"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 20]"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
+</div>
